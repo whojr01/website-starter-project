@@ -1,0 +1,9 @@
+// The reset sets margin to 0
+// In regular flows (not flex/grid) to add
+// consistent margin back use this. It has
+// ZERO specificity (:where) and does not add
+// margin to First/last element.
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-spacer, 1rem);
+}
